@@ -121,10 +121,12 @@
 		<script>
 		
 		var valorTotalDoTotal = 0.00;
-
+		var codigoItem = 0;
+		var vetor = {};
 		function concatText(){
 
 			var y = document.getElementById('produtos').options[document.getElementById("produtos").selectedIndex].text;
+			var z = document.getElementById('clientes').options[document.getElementById("clientes").selectedIndex].text;
 			var produtoSelecionado = Number(document.getElementById('produtos').value);
 			var x = Number(document.getElementById('quantidade').value);
 			var valorTotal = 0.00;
@@ -156,8 +158,24 @@
 			document.getElementById('quantidade').value = 0;
 			if((x!="") && (x!=" ") && (y!="") && (y!=" ")){
 				document.getElementById('textao').innerHTML += y + "                  Quantidade:   " + x + "                Valor UNITÁRIO: R$" + z + "                               Valor TOTAL: R$"+ valorTotal +"\n";
-			var button = document.getElementById('finalizar');
-			button.disabled = false;
+		
+
+				check = function (title, filter) {
+				        if (vetor[title] !== undefined) { // Testa se a chave existe
+				            vetor[title].push(filter);    // Adiciona um elemento no array
+				        } else {
+				            vetor[title] = [filter];      // Se não existe, cria um array com um elemento
+				        }
+				};
+				
+				check(codigoItem, z);
+				check(codigoItem, y);
+				check(codigoItem, x);
+				check(codigoItem, valorTotal);
+				alert(vetor[codigoItem].join(", "));
+				codigoItem++;
+			
+			
 			}else{
 				alert('Não é possível a inserção de produtos vazios!');
 			}
@@ -179,7 +197,8 @@
 										<div class="input-group-addon">
 											<i class="fa fa-user"></i>
 										</div>
-										<select data-placeholder="Selecione..." id="produtos"
+										<span id="saida">aa</span>
+										<select data-placeholder="Selecione..." id="clientes"
 											class="standardSelect form-control" tabindex="1">
 											<option value=""></option>
 											<option value="United States">United States</option>
