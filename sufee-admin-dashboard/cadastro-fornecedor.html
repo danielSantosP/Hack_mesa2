@@ -262,13 +262,14 @@
 					<div class="col-12">
 						<div class="card">
 							<div class="card-body card-block">
+									<form action="http://localhost:2000/fornecedores/" method="post">
 								<div class="form-group">
 									<label class=" form-control-label">Nome da Empresa</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class="fa fa-briefcase"></i>
 										</div>
-										<input class="form-control">
+										<input name= "nomeFornecedor"class="form-control">
 									</div>
 									<small class="form-text text-muted">ex. Fornecedor Roupas ltda.</small>
 								</div>
@@ -278,7 +279,7 @@
 										<div class="input-group-addon">
 											<i class="fa fa-map-marker"></i>
 										</div>
-										<input class="form-control">
+										<input name= "endereco" class="form-control">
 									</div>
 									<small class="form-text text-muted">ex. Rua Dos Amarais, 160, Olinda, RJ</small>
 								</div>
@@ -288,15 +289,16 @@
 										<div class="input-group-addon">
 											<i class="fa fa-phone"></i>
 										</div>
-										<input class="form-control">
+										<input name= "telefone" class="form-control">
 									</div>
 									<small class="form-text text-muted">ex. (19)99999-9999</small>
 								</div>
 								<div class="form-group">
-									<button type="button" class="btn btn-success">
-										<i class="fa fa-magic">  Salvar</i>
-									</button>
+										<input type="submit" value="Salvar" class="btn btn-success">
+
 								</div>
+								</form>
+
 							</div>
 						</div>
 					</div>

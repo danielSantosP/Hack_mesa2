@@ -264,13 +264,14 @@
 					<div class="col-12">
 						<div class="card">
 							<div class="card-body card-block">
+									<form action="http://localhost:2000/produtos/" method="post">
 								<div class="form-group">
 									<label class=" form-control-label">Identificação</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class="fa fa-tags"></i>
 										</div>
-										<input class="form-control">
+										<input name = "nomeProduto" class="form-control">
 									</div>
 									<small class="form-text text-muted">ex. Sapato Rosa
 										Lubutoun</small>
@@ -281,7 +282,7 @@
 										<div class="input-group-addon">
 											<i class="fa fa-usd"></i>
 										</div>
-										<input class="form-control">
+										<input name = "valorProduto" class="form-control">
 									</div>
 									<small class="form-text text-muted">ex. R$550,00</small>
 								</div>
@@ -291,7 +292,7 @@
 										<div class="input-group-addon">
 											<i class="fa fa-arrows"></i>
 										</div>
-										<input class="form-control">
+										<input name = "tamanho" class="form-control">
 									</div>
 									<small class="form-text text-muted">ex. P ou 44</small>
 								</div>
@@ -301,15 +302,14 @@
 										<div class="input-group-addon">
 											<i class="fa fa-sort-amount-desc"></i>
 										</div>
-										<input class="form-control">
+										<input name = "quantidadeProduto" class="form-control">
 									</div>
 									<small class="form-text text-muted">ex. 44</small>
 								</div>
 								<div class="form-group">
-									<button type="button" class="btn btn-success">
-										<i class="fa fa-magic"> Salvar</i>
-									</button>
+										<input type="submit" value="Salvar" class="btn btn-success">
 								</div>
+									</form>
 							</div>
 						</div>
 					</div>
