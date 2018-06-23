@@ -200,7 +200,7 @@
 											<input type="text"
 											onfocus="javascript: retirarFormatacao(this);"
 											onblur="javascript: formatarCampo(this);" maxlength="14"
-											name="nomeCliente" class="form-control">
+											name="cpf" class="form-control">
 										</div>
 										<small class="form-text text-muted">ex. 999.999.999-99</small>
 									</div>
@@ -215,7 +215,7 @@
 										<small class="form-text text-muted">ex. 21/04/1998</small>
 									</div>
 									<div class="form-group">
-										<input type="submit" value="Salvar" class="btn btn-success">
+										<input type="submit" value="Salvar" class="btn btn-success" onclick="redirect()">
 										
 									</div>
 							</div>
@@ -293,6 +293,9 @@
 	<script src="assets/js/lib/chosen/chosen.jquery.min.js"></script>
 
 	<script>
+		function redirect(){
+			window.location.redirect('file:///home/oficina5/Documentos/Hack_mesa2/sufee-admin-dashboard/cadastro-cliente.html')
+		}
 		jQuery(document).ready(function () {
 			jQuery(".standardSelect").chosen({
 				disable_search_threshold: 10,
