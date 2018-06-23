@@ -8,7 +8,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>EasyRetail</title>
+<title>Sufee Admin - HTML5 Admin Template</title>
 <meta name="description" content="Sufee Admin - HTML5 Admin Template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
 <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
 <link rel="stylesheet" href="assets/scss/style.css">
-<link href="assets/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/lib/chosen/chosen.min.css">
 
 <link
 	href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800'
@@ -33,8 +33,6 @@
 
 </head>
 <body>
-
-
 	<!-- Left Panel -->
 
 	<aside id="left-panel" class="left-panel">
@@ -54,41 +52,39 @@
 			<div id="main-menu" class="main-menu collapse navbar-collapse">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="index.html"> <i
-							class="menu-icon fa fa-home"></i>Principal
+							class="menu-icon fa fa-dashboard"></i>Principal
 					</a></li>
 					<li class="menu-item-has-children dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"
 						aria-haspopup="true" aria-expanded="false"> <i
-							class="menu-icon fa fa-users"></i>Cadastros
+							class="menu-icon fa fa-th"></i>Cadastros
 					</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="menu-icon fa fa-user-tie"></i><a
-								href="cadastro-cliente.html">Cliente</a></li>
-							<li><i class="menu-icon fa fa-forklift"></i><a
-								href="cadastro-produto.html">Produto</a></li>
-							<li><i class="menu-icon fa fa-forklift"></i><a
-								href="cadastro-fornecedor.html">Fornecedor</a></li>
+							<li><i class="menu-icon fa fa-th"></i><a
+								href="forms-basic.html">Cadastrar Cliente</a></li>
+							<li><i class="menu-icon fa fa-th"></i><a
+								href="forms-advanced.html">Cadastrar Produto</a></li>
 						</ul></li>
 					<li class="menu-item-has-children dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"
 						aria-haspopup="true" aria-expanded="false"> <i
-							class="menu-icon fa fa-edit"></i>Registros
+							class="menu-icon fa fa-th"></i>Registros
 					</a>
 						<ul class="sub-menu children dropdown-menu">
 							<li><i class="menu-icon fa fa-th"></i><a
-								href="forms-advanced.html">Estoque</a></li>
+								href="forms-basic.html">Estoque</a></li>
 							<li><i class="menu-icon fa fa-th"></i><a
-								href="forms-advanced.html">Vendas</a></li>
+								href="forms-basic.html">Vendas</a></li>
 
 						</ul></li>
 					<li class="menu-item-has-children dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"
 						aria-haspopup="true" aria-expanded="false"> <i
-							class="menu-icon fa fa-file-pdf-o"></i>Relatórios
+							class="menu-icon fa fa-th"></i>Relatórios
 					</a>
 						<ul class="sub-menu children dropdown-menu">
 							<li><i class="menu-icon fa fa-th"></i><a
-								href="forms-advanced.html">Posição de Estoque</a></li>
+								href="forms-basic.html">Posição de Estoque</a></li>
 							<li><i class="menu-icon fa fa-th"></i><a
 								href="forms-advanced.html">Custo Médio</a></li>
 							<li><i class="menu-icon fa fa-th"></i><a
@@ -97,7 +93,7 @@
 								href="forms-advanced.html">Queima de Estoque</a></li>
 
 						</ul></li>
-					<li><a href="atualizar-valores.html">Atualizar Valores<i
+					<li><a href="widgets.html">Atualizar Valores<i
 							class="menu-icon ti-email"></i></a></li>
 					<li><a href="widgets.html">Gerar Etiqueta<i
 							class="menu-icon ti-email"></i></a></li>
@@ -248,48 +244,82 @@
 		<!-- /header -->
 		<!-- Header-->
 
-		<div class="content mt-3"></div>
-
-		<div class="col-xl-3 col-lg-6">
+		<div class="breadcrumbs">
+			<div class="col-sm-4">
+				<div class="page-header float-left">
+					<div class="page-title">
+						<h1>Cadastro do Fornecedor</h1>
 					</div>
-	</div>
-	<!-- .content -->
+				</div>
+			</div>
+		</div>
+
+		<div class="content mt-3">
+			<div class="animated fadeIn">
+				<div class="row">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body card-block">
+								<div class="form-group">
+									<label class=" form-control-label">Nome da Empresa</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
+										</div>
+										<input class="form-control">
+									</div>
+									<small class="form-text text-muted">ex. Fornecedor Roupas ltda.</small>
+								</div>
+								<div class="form-group">
+									<label class=" form-control-label">Logradouro</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
+										</div>
+										<input class="form-control">
+									</div>
+									<small class="form-text text-muted">ex. Rua Dos Amarais, 160, Olinda, RJ</small>
+								</div>
+								<div class="form-group">
+									<label class=" form-control-label">Telefone</label>
+									<div class="input-group">
+										<div class="input-group-addon">
+											<i class="fa fa-calendar"></i>
+										</div>
+										<input class="form-control">
+									</div>
+									<small class="form-text text-muted">ex. (19)99999-9999</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- .animated -->
+		</div>
+		<!-- .content -->
+
+
 	</div>
 	<!-- /#right-panel -->
 
 	<!-- Right Panel -->
 
+
 	<script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+	<script src="assets/js/popper.min.js"></script>
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/main.js"></script>
+	<script src="assets/js/lib/chosen/chosen.jquery.min.js"></script>
 
-
-	<script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
-	<script src="assets/js/dashboard.js"></script>
-	<script src="assets/js/widgets.js"></script>
-	<script src="assets/js/lib/vector-map/jquery.vmap.js"></script>
-	<script src="assets/js/lib/vector-map/jquery.vmap.min.js"></script>
-	<script src="assets/js/lib/vector-map/jquery.vmap.sampledata.js"></script>
-	<script src="assets/js/lib/vector-map/country/jquery.vmap.world.js"></script>
 	<script>
-        ( function ( $ ) {
-            "use strict";
-
-            jQuery( '#vmap' ).vectorMap( {
-                map: 'world_en',
-                backgroundColor: null,
-                color: '#ffffff',
-                hoverOpacity: 0.7,
-                selectedColor: '#1de9b6',
-                enableZoom: true,
-                showTooltip: true,
-                values: sample_data,
-                scaleColors: [ '#1de9b6', '#03a9f5' ],
-                normalizeFunction: 'polynomial'
-            } );
-        } )( jQuery );
+        jQuery(document).ready(function() {
+            jQuery(".standardSelect").chosen({
+                disable_search_threshold: 10,
+                no_results_text: "Oops, nothing found!",
+                width: "100%"
+            });
+        });
     </script>
 
 </body>
