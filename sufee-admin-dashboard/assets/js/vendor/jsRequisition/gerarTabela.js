@@ -30,7 +30,7 @@ function getProdutos() {
 }
 function tabPop(container, data) {
     container.empty();
-    var table = $('<table class="table table-striped table-bordered">');//criando uma tabela.
+    var table = $('<table id="bootstrap-data-table" class="table table-striped table-bordered">');//criando uma tabela.
     $.each(data, function (rowIndex, r) {//percorre os elementos de data, sendo rowIndex o indice atual do elemento e r o elementos em si(a linha)
         var row = $("<tr/>");//Criando uma linha
         $.each(r, function (colIndex, c) {//percorre os elementos da linha(r), sendo colIndex o indice atual do elemento e c o elemento em si(coluna)
