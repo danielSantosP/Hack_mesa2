@@ -61,6 +61,8 @@
 						<ul class="sub-menu children dropdown-menu">
 							<li><i class="menu-icon fa fa-user-tie"></i><a
 								href="cadastro-cliente.html">Cliente</a></li>
+							<li><i class="menu-icon fa fa-user-tie"></i><a
+								href="cadastro-entrada.html">Entrada</a></li>
 							<li><i class="menu-icon fa fa-forklift"></i><a
 								href="cadastro-produto.html">Produto</a></li>
 							<li><i class="menu-icon fa fa-forklift"></i><a
@@ -72,9 +74,11 @@
 							class="menu-icon fa fa-edit"></i>Registros
 					</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="menu-icon fa fa-th"></i><a
+							<li><i class="menu-icon"></i><a
 								href="registro-estoque.html">Estoque</a></li>
-							<li><i class="menu-icon fa fa-th"></i><a
+							<li><i class="menu-icon"></i><a
+								href="registro-entrada.html">Entrada</a></li>
+							<li><i class="menu-icon"></i><a
 								href="registro-vendas.html">Vendas</a></li>
 
 						</ul></li>
@@ -84,19 +88,20 @@
 							class="menu-icon fa fa-file-pdf-o"></i>Relatórios
 					</a>
 						<ul class="sub-menu children dropdown-menu">
-							<li><i class="menu-icon fa fa-th"></i><a
-								href="custo-medio.html  ">Custo Médio</a></li>
-							<li><i class="menu-icon fa fa-th"></i><a
-								href="forms-advanced.html">Curva ABC</a></li>
-							<li><i class="menu-icon fa fa-th"></i><a
-								href="forms-advanced.html">Queima de Estoque</a></li>
+							<li><i class="menu-icon"></i><a
+								href="custo-medio.html ">Custo Médio</a></li>
+							<li><i class="menu-icon"></i><a
+								href="#">Curva ABC</a></li>
+							<li><i class="menu-icon"></i><a
+								href="queima-de-estoque.html">Queima de Estoque</a></li>
 
 						</ul></li>
 					<li><a href="atualizar-valores.html"><i
 							class="menu-icon fa fa-pie-chart"></i>Atualizar Valores</a></li>
-					<li><a href=""><i class="menu-icon fa fa-tags"></i>Gerar
-							Etiqueta</a></li>
-					<li><a href="venda.html"><i class="menu-icon fa fa-tags"></i>Vender</a></li>
+					<li><a href=""><i class="menu-icon fa fa-tags"></i>Gerar Etiqueta</a></li>
+					<li><a href="venda.html"><i class="menu-icon fa fa-cart-plus"></i>Vender</a></li>
+					<li><a href="https://servicos.spc.org.br/spc/controleacesso/autenticacao/entry.action"><i class="menu-icon fa fa-search"></i>Consultar SPC</a></li>
+					<li><a href="cartao-fidelizacao.html"><i class="menu-icon fa fa-gift" style="color:yellow;"></i><font color="yellow">Cartão Fidelidade</font></a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -108,14 +113,13 @@
 
 		<!-- Header-->
 		<header id="header" class="header">
-			<div class="header-menu">
-				<div class="col-sm-7">
-					<a id="menuToggle" class="menutoggle pull-left"><i
-						class="fa fa fa-tasks"></i></a>
-				</div>
-			</div>
+	            <div class="header-menu">
+	                <div class="col-sm-7">
+	                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+	                </div>
+	            </div>
 
-		</header>
+        </header>	
 		<!-- /header -->
 		<!-- Header-->
 		<script>
@@ -231,7 +235,7 @@
 											<i class="fa fa-sort-amount-desc"></i>
 										</div>
 										<input type="number" id="quantidade" class="form-control">
-										<input type="submit" value="Finalizar Venda" class="btn btn-success">
+										<input type="submit" value="Adicionar" class="btn btn-success">
 									</div>
 									<small class="form-text text-muted">ex. 44</small>
 								</div>
