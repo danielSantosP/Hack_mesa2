@@ -271,7 +271,25 @@
 					<div class="col-12">
 						<div class="card">
 							<div class="card-body card-block">
-
+								<script>
+								function formatarCampo(campoTexto) {
+								    if (campoTexto.value.length <= 11) {
+								        campoTexto.value = mascaraCpf(campoTexto.value);
+								    } else {
+								        campoTexto.value = mascaraCnpj(campoTexto.value);
+								    }
+								}
+								function retirarFormatacao(campoTexto) {
+								    campoTexto.value = campoTexto.value.replace(/(\.|\/|\-)/g,"");
+								}
+								function mascaraCpf(valor) {
+								    return valor.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/g,"\$1.\$2.\$3\-\$4");
+								}
+								function mascaraCnpj(valor) {
+								    return valor.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/g,"\$1.\$2.\$3\/\$4\-\$5");
+								}
+								
+								</script>
 
 								<div class="form-group">
 									<label class=" form-control-label">CPF do Cliente</label>
@@ -279,7 +297,12 @@
 										<div class="input-group-addon">
 											<i class="fa fa-user"></i>
 										</div>
-										<input type="text" name="nomeCliente" class="form-control">
+										<input type="text"
+											onfocus="javascript: retirarFormatacao(this);"
+											onblur="javascript: formatarCampo(this);" maxlength="14"
+											name="nomeCliente" class="form-control">
+										<button type="button" class="btn btn-success" onclick="liberation(this);">
+											Pesquisar</button>
 									</div>
 									<small class="form-text text-muted">ex. 464.833.218-05</small>
 								</div>
@@ -290,7 +313,65 @@
 						<!-- .animated -->
 					</div>
 					<!-- .content -->
+					<script>
+						function liberation(){
+							for (i = 0; i < 4; i++){
+								if (document.getElementsByClassName('xis')[i].style.opacity != 1){
+								document.getElementsByClassName('xis')[i].style.opacity = 1;
+								} else {
+									document.getElementsByClassName('xis')[i].style.opacity = 0;
+								}
+							}
+							
+						}
+					
+					
+					</script>
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body card-block">
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 1/12
+									<br/>
+									<center><img class="xis" src="./images/X.png" style="width:50px; height:auto; opacity:0;"></center></img>
+								</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 2/12
+									<br/>
+									<center><img class="xis" src="./images/X.png" style="width:50px; height:auto; opacity:0;"></center></img>
+								</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 3/12
+									<br/>
+									<center><img class="xis" src="./images/X.png" style="width:50px; height:auto; opacity:0;"></center></img>
+								</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 4/12
+									<br/>
+									<center><img class="xis" src="./images/X.png" style="width:50px; height:auto; opacity:0;"></center></img>
+								</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 5/12</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 6/12</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 7/12</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 8/12</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 9/12</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 10/12</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 11/12</div>
+								<div class="col-2" style="border-style: dotted; height: 100px;">
+									PRÊMIO 12/12</div>
 
+							</div>
+
+						</div>
+						<!-- .animated -->
+					</div>
 
 				</div>
 				<!-- /#right-panel -->
