@@ -123,41 +123,48 @@
 		var valorTotalDoTotal = 0.00;
 		var codigoItem = 0;
 		var vetor = {};
+		
 		function concatText(){
-
-			var y = document.getElementById('produtos').options[document.getElementById("produtos").selectedIndex].text;
-			var z = document.getElementById('clientes').options[document.getElementById("clientes").selectedIndex].text;
-			var produtoSelecionado = Number(document.getElementById('produtos').value);
+			var y;
+			jQuery("#opcao option:selected").each(function() {
+				y = jQuery(this).text();
+				console.log(">>>>>>y",y);
+				
+			}); 
+			// var y = document.getElementById('opcao').value;
+			
+			var c;
+			jQuery("#cliente option:selected").each(function() {
+				c = jQuery(this).text();
+				
+				
+			}); 
+			// var z = document.getElementById('selectClientes').text;
+			var u;
+			var p;
+			jQuery("#opcao option:selected").each(function() {
+				p = jQuery(this).val();
+				t = jQuery(this).text();
+				u = jQuery(this)[0].id;
+				console.log(">>>>>>u",u);
+				console.log(">>>>>>p",p);
+				console.log(">>>>>>t",t);
+				
+			}); 
+			var produtoSelecionado = Number(p);
 			var x = Number(document.getElementById('quantidade').value);
 			var valorTotal = 0.00;
+			console.log(">>>>>>z",z)
 
 			var z = 0;
 			if (produtoSelecionado != 0){
 
-			if (produtoSelecionado == 1){
-				z = 2.1;
-				valorTotal += parseFloat(Number(z)*Number(x));
-			}
-			if (produtoSelecionado == 2){
-				z = 3.4;
-				valorTotal += parseFloat(Number(z)*Number(x));
-			}
-			if (produtoSelecionado == 3){
-				z = 4.7;
-				valorTotal += parseFloat(Number(z)*Number(x));
-			}
+			valorTotalDoTotal = x*p;
 
-			if (produtoSelecionado == 4){
-				z = 5.3;
-				valorTotal += parseFloat(Number(z)*Number(x));
-			}
-
-			valorTotalDoTotal += valorTotal;
-
-			document.getElementById('produtos').value = 0;
+			document.getElementById('selectProdutos').value = 0;
 			document.getElementById('quantidade').value = 0;
-			if((x!="") && (x!=" ") && (y!="") && (y!=" ")){
-				document.getElementById('textao').innerHTML += y + "                  Quantidade:   " + x + "                Valor UNITÁRIO: R$" + z + "                               Valor TOTAL: R$"+ valorTotal +"\n";
+			// if((x!="") && (x!=" ") && (y!="") && (y!=" ")){
+				document.getElementById('textao').innerHTML += y + "                  Quantidade:   " + x + "                Valor UNITÁRIO: R$" + p + "                               Valor TOTAL: R$"+ valorTotalDoTotal +"\n";
 		
 
 				check = function (title, filter) {
@@ -176,9 +183,9 @@
 				codigoItem++;
 			
 			
-			}else{
-				alert('Não é possível a inserção de produtos vazios!');
-			}
+			// }else{
+			// 	alert('Não é possível a inserção de produtos vazios!');
+			// }
 		} else {
 			alert('Selecione um produto!');
 		}
@@ -191,56 +198,31 @@
 					<div class="col-12">
 						<div class="card">
 							<div class="card-body card-block">
+									<form action="http://localhost:2000/itemVenda/" method="post">
 								<div class="form-group">
-									<label class=" form-control-label">Cliente</label>
-									<div class="input-group">
-										<div class="input-group-addon">
-											<i class="fa fa-user"></i>
-										</div>
-										<span id="saida">aa</span>
-										<select data-placeholder="Selecione..." id="clientes"
-											class="standardSelect form-control" tabindex="1">
-											<option value=""></option>
-											<option value="United States">United States</option>
-											<option value="United Kingdom">United Kingdom</option>
-											<option value="Afghanistan">Afghanistan</option>
-											<option value="Aland Islands">Aland Islands</option>
-											<option value="Albania">Albania</option>
-											<option value="Algeria">Algeria</option>
-											<option value="American Samoa">American Samoa</option>
-											<option value="Andorra">Andorra</option>
-											<option value="Angola">Angola</option>
-											<option value="Anguilla">Anguilla</option>
-											<option value="Antarctica">Antarctica</option>
-										</select>
-									</div>
-									<small class="form-text text-muted">ex. 44</small>
-								</div>
-							
-								<div class="form-group">
-									<label class=" form-control-label">Produto</label>
+									
+									<label class=" form-control-label">Clientes</label>
 									<div class="input-group">
 										<div class="input-group-addon">
 											<i class="fa fa-cart-plus"></i>
 										</div>
-										<select data-placeholder="Selecione..." id="produtos"
-											class="standardSelect form-control" tabindex="1">
-											<option value=""></option>
-											<option value="United States">United States</option>
-											<option value="United Kingdom">United Kingdom</option>
-											<option value="Afghanistan">Afghanistan</option>
-											<option value="Aland Islands">Aland Islands</option>
-											<option value="Albania">Albania</option>
-											<option value="Algeria">Algeria</option>
-											<option value="American Samoa">American Samoa</option>
-											<option value="Andorra">Andorra</option>
-											<option value="Angola">Angola</option>
-											<option value="Anguilla">Anguilla</option>
-											<option value="Antarctica">Antarctica</option>
-										</select>
+										<div id="selectClientes"  align="center"></div>
 									</div>
 									<small class="form-text text-muted">ex. 44</small>
 								</div>
+								<div class="form-group">
+									
+										<label class=" form-control-label">Produtos</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<i class="fa fa-cart-plus"></i>
+											</div>
+											<div id="selectProdutos"  align="center"></div>
+										</div>
+										<small class="form-text text-muted">ex. 44</small>
+									</div>
+							
+						
 								
 								<div class="form-group">
 									<label class=" form-control-label">Quantidade(uni.)</label>
@@ -249,8 +231,7 @@
 											<i class="fa fa-sort-amount-desc"></i>
 										</div>
 										<input type="number" id="quantidade" class="form-control">
-										<input type="button" class="btn btn-success" onclick="concatText(this)" id="incluir"
-											value="Adicionar ao Carrinho" />
+										<input type="submit" value="Finalizar Venda" class="btn btn-success">
 									</div>
 									<small class="form-text text-muted">ex. 44</small>
 								</div>
@@ -263,10 +244,10 @@
 									</div>
 								</div>
 								<div class="form-group">
-									<button type="button" class="btn btn-success">
-										Finalizar Venda
-									</button>
+										<input type="submit" value="Finalizar Venda" class="btn btn-success">
+
 								</div>
+							</form>
 							</div>
 						</div>
 					</div>
@@ -287,7 +268,8 @@
 	<script src="assets/js/plugins.js"></script>
 	<script src="assets/js/main.js"></script>
 
-
+	<script src="assets/js/vendor/jsRequisition/listarClientes.js"></script>
+	<script src="assets/js/vendor/jsRequisition/listarProdutos.js"></script> 
 	<script src="assets/js/lib/chart-js/Chart.bundle.js"></script>
 	<script src="assets/js/dashboard.js"></script>
 	<script src="assets/js/widgets.js"></script>
