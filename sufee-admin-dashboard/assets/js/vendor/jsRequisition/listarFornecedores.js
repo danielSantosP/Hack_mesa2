@@ -6,14 +6,14 @@ jQuery(document).ready(function($) {
 });
 function populaSelect(container, data) {
     container.empty();
-    var select1 = jQuery('<select name="idFornecedor" class="form-control" style="width:100%;">');//criando uma tabela.
+    var select2 = jQuery('<select name="Fornecedor_idFornecedor" class="form-control" style="width:100%;">');//criando uma tabela.
     jQuery.each(data, function (rowIndex, r) {//percorre os elementos de data, sendo rowIndex o indice atual do elemento e r o elementos em si(a linha)
         console.log(r[0]);
         if(rowIndex!=0){
-        select1.append(jQuery("<option value="+ r[0]+"/>").text(r[1]));
+        select2.append(jQuery("<option value="+ r[0]+"/>").text(r[1]));
         }
     });
-    return container.append(select1);
+    return container.append(select2);
 }
 
 function getFornecedores() {
@@ -25,7 +25,7 @@ function getFornecedores() {
     var Data = JSON.parse(xmlHttp.responseText);
     console.log(Data[0]);
     var fornecedores = Array();
-    fornecedores[0] = ["idProduto", "nomeProduto ", "quantidadeProduto", "tamanho", "valorProduto"];//cABEÇALHO
+    fornecedores[0] = ["idFornecedor", "nomeFornecedor ", "telefone", "tamanho", "endereco"];//cABEÇALHO
     for (var i = 0; i < Data.length; i++) {//Pegando os elementos de cada user
         var auxiliar = Array();
         auxiliar[0] = Data[i]["idFornecedor"];
