@@ -1,30 +1,34 @@
 jQuery(document).ready(function($) {
-    function getProdutos() {
-        var xmlHttp = new XMLHttpRequest();//elemento para fazer a requisição
-        xmlHttp.open("GET", "http://localhost:2000/produtos/", false);//
-        xmlHttp.send(null);
-        
+
+    var Produtos = getProdutos();//pega os usuarios da primeira pagina para preencher a tabela
+    var populaTab = tabPop($("#tabela"), Produtos);
+});
+
+function getProdutos() {
+    var xmlHttp = new XMLHttpRequest();//elemento para fazer a requisição
+    xmlHttp.open("GET", "http://localhost:2000/produtos/", false);//
+    xmlHttp.send(null);
     
-        var Data = JSON.parse(xmlHttp.responseText);
-        console.log(Data[0]);
-        var produtos = Array();
-        produtos[0] = ["idProduto", "nomeProduto ", "quantidadeProduto", "tamanho", "valorProduto"];//cABEÇALHO
-        for (var i = 0; i < Data.length; i++) {//Pegando os elementos de cada user
-            var auxiliar = Array();
-            auxiliar[0] = Data[i]["idProduto"];
-            auxiliar[1] = Data[i]["nomeProduto"];
-            auxiliar[2] = Data[i]["quantidadeProduto"];
-            auxiliar[3] = Data[i]["tamanho"];
-            auxiliar[4] = Data[i]["valorProduto"];
-            produtos[i+1] = auxiliar;
-        }
-    
-        
-        return produtos;
+
+    var Data = JSON.parse(xmlHttp.responseText);
+    console.log(Data[0]);
+
+    var produtos = Array();
+    produtos[0] = ["idProduto", "nomeProduto ", "quantidadeProduto", "tamanho", "valorProduto"];//cABEÇALHO
+    for (var i = 0; i < Data.length; i++) {//Pegando os elementos de cada user
+        var auxiliar = Array();
+        auxiliar[0] = Data[i]["idProduto"];
+        auxiliar[1] = Data[i]["nomeProduto"];
+        auxiliar[2] = Data[i]["quantidadeProduto"];
+        auxiliar[3] = Data[i]["tamanho"];
+        auxiliar[4] = Data[i]["valorProduto"];
+        produtos[i+1] = auxiliar;
     }
 
-});
-function criarTabela(container, data) {
+    
+    return produtos;
+}
+function tabPop(container, data) {
     container.empty();
     var table = $('<table class="table table-striped table-bordered">');//criando uma tabela.
     $.each(data, function (rowIndex, r) {//percorre os elementos de data, sendo rowIndex o indice atual do elemento e r o elementos em si(a linha)
